@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/fragmentHome">
+
+    <fragment
+        android:id="@+id/fragmentCatalog"
+        android:name="com.example.buttonnavigationviewlesson.fragments.FragmentCatalog"
+        android:label="Каталог"
+        tools:layout="@layout/fragment_catalog" />
+    <fragment
+        android:id="@+id/fragmentFavorites"
+        android:name="com.example.buttonnavigationviewlesson.fragments.FragmentFavorites"
+        android:label="Избранное"
+        tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.example.buttonnavigationviewlesson.fragments.FragmentProfile"
+        android:label="Профиль"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.example.buttonnavigationviewlesson.fragments.FragmentHome"
+        android:label="Главная"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentContent"
+            app:destination="@id/fragmentContent" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentContent"
+        android:name="com.example.buttonnavigationviewlesson.fragments.FragmentContent"
+        android:label="fragment_content"
+        tools:layout="@layout/fragment_content" >
+        <argument
+            android:name="LabelProduct"
+            android:defaultValue="Label Product" />
+    </fragment>
+</navigation>
